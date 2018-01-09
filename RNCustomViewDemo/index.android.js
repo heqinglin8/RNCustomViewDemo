@@ -19,7 +19,7 @@ class DemoViewDemo extends React.Component {
       <View>
         <DemoView
             ref = { 'mDemoView' }
-            style = { { width:1080, height:100 } }
+            style = { { width:1080, height:300 } }
             title = { 'DEMO' }
             alpha = { 0.5 }
             onTextColorChange = { (color) => {
@@ -37,12 +37,6 @@ class DemoViewDemo extends React.Component {
                 this.refs.mDemoView.addView();
             }}>
         </Button>
-        <Button
-            title = { 'hql新增一个按钮' }
-            onPress = { () => {
-                this.refs.mDemoView.addView();
-            }}>
-                </Button>
       </View>
     );
   }

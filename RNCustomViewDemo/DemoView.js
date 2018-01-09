@@ -18,12 +18,14 @@ class DemoView extends React.Component {
         title: PropTypes.string,
         alpha: PropTypes.number,
         onTextColorChange: PropTypes.func,
+        onTextColorChange2: PropTypes.func,
         ...View.propTypes
     }
 
     constructor(props) {
         super(props);
         this._onTextColorChange = this._onTextColorChange.bind(this);
+        this._onTextColorChange2 = this._onTextColorChange2.bind(this);
     }
 
     changeTextColor(color) {
@@ -42,6 +44,16 @@ class DemoView extends React.Component {
 
         this.props.onTextColorChange(event.nativeEvent.color);
     }
+
+    _onTextColorChange2(event:Event) {
+            console.log('_onTextColorChange2');
+
+            if (!this.props.onTextColorChange) {
+                return;
+            }
+
+            this.props.onTextColorChange(event.nativeEvent.color);
+        }
 
     addView() {
         UIManager.dispatchViewManagerCommand(

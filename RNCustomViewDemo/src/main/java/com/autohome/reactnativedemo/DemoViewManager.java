@@ -63,6 +63,11 @@ public class DemoViewManager extends ViewGroupManager<LinearLayout> {
 
         Bundle bundle = new Bundle();
         bundle.putInt("section", 6);
+        ArrayList<String> imageList = new ArrayList<>(Arrays.asList(
+                "https://www.baidu.com/img/baidu_jgylogo3.gif",
+                "https://www.baidu.com/img/baidu_jgylogo4.gif"
+        ));
+        bundle.putStringArrayList("images", imageList);
 
         WritableNativeMap writableNativeMap = new WritableNativeMap();
         writableNativeMap.putDouble("rootTag", (double) delayView.getId());
@@ -70,14 +75,13 @@ public class DemoViewManager extends ViewGroupManager<LinearLayout> {
 
         delayView.startReactApplication(mReactInstanceManager, "BlankView", bundle);
 
+//        ArrayList<String> imageList1 = new ArrayList<>(Arrays.asList(
+//                "https://www.baidu.com/img/baidu_jgylogo3.gif",
+//                "https://www.baidu.com/img/baidu_jgylogo4.gif"
+//        ));
+//        updatedProps.putStringArrayList("images1", imageList1);
         Bundle updatedProps = delayView.getAppProperties();
         updatedProps.putString("name","何清林");
-        ArrayList<String> imageList = new ArrayList<>(Arrays.asList(
-                "http://foo.com/bar3.png",
-                "http://foo.com/bar4.png"
-        ));
-        bundle.putStringArrayList("images", imageList);
-
         delayView.setAppProperties(updatedProps);
 
         mDelayView = delayView;

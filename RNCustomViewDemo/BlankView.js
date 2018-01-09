@@ -3,6 +3,7 @@ import {
     Component
 } from 'react';
 import {
+    AppRegistry,
     View,
     Text,
     Image
@@ -10,23 +11,24 @@ import {
 
 class BlankView extends React.Component {
 
-     renderImage(imgURI) {
+     renderImage(imgURI,index) {
         return (
-         <View>
+         <View key = {index}>
          <Text>{imgURI}</Text>
+         <Image source={{uri: imgURI}} style={{width: 117, height: 40}} />
         </View>
         );
       }
 
     render() {
-        console.log('images:',this.props.images)
+        var images = this.props.images;
+        console.log('images:',images)
         return (
              <View
-                style = { { width:1080, height:800 } }>
+                style = { { width:1080, height:100 } }>
                 <Text>BlankView :{this.props.section}</Text>
                 <Text>BlankView :{this.props.name}</Text>
-                <Text>List :{this.props.images}</Text>
-                 {this.props.images.map(this.renderImage)}
+                {images.map((item,index) => this.renderImage(item,index))}
              </View>
         );
     }
