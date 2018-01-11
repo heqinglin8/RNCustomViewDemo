@@ -7,6 +7,8 @@ import {
 
 import DemoView from './DemoView.js';
 
+import TopbarView from './TopbarView.js';
+
 import BlankView from './BlankView.js'
 AppRegistry.registerComponent('BlankView', () => BlankView);
 
@@ -37,6 +39,10 @@ class DemoViewDemo extends React.Component {
                 this.refs.mDemoView.addView();
             }}>
         </Button>
+         <TopbarView
+            ref = { 'mTopbarView' }
+            style = { { width:1080, height:50 } }
+            />
       </View>
     );
   }

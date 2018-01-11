@@ -1,5 +1,6 @@
 package com.autohome.reactnativedemo;
 
+import com.autohome.reactnativedemo.viewmanager.TopbarViewManager;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;
@@ -12,9 +13,11 @@ import java.util.List;
 public class DemoPackage implements ReactPackage {
 
     private DemoViewManager mDemoViewManager;
+    private TopbarViewManager mTopbarViewManager;
 
     public DemoPackage() {
         mDemoViewManager = new DemoViewManager();
+        mTopbarViewManager = new TopbarViewManager();
     }
 
     @Override
@@ -27,6 +30,7 @@ public class DemoPackage implements ReactPackage {
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
         List<ViewManager> viewManagers = new ArrayList<>();
         viewManagers.add(mDemoViewManager);
+        viewManagers.add(mTopbarViewManager);
         return viewManagers;
     }
 
