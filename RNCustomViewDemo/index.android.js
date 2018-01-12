@@ -2,7 +2,9 @@ import React from 'react';
 import {
   View,
   AppRegistry,
-  Button
+  Button,
+  PixelRatio,
+  Dimensions
 } from 'react-native';
 
 import DemoView from './DemoView.js';
@@ -15,13 +17,17 @@ AppRegistry.registerComponent('BlankView', () => BlankView);
 import DelayView from './DelayView.js'
 AppRegistry.registerComponent('DelayView', () => DelayView);
 
+var Util = require('./utils/Util');
+
 class DemoViewDemo extends React.Component {
   render() {
+    console.log("Topbar height:",PixelRatio.getPixelSizeForLayoutSize(50),"PixelRatio:",PixelRatio.get(),"width:",Util.window.width,"height:",Util.window.height);
     return (
+
       <View>
         <DemoView
             ref = { 'mDemoView' }
-            style = { { width:1080, height:300 } }
+            style = { { width:Util.window.width, height:300 } }
             title = { 'DEMO' }
             alpha = { 0.5 }
             onTextColorChange = { (color) => {
@@ -41,8 +47,11 @@ class DemoViewDemo extends React.Component {
         </Button>
          <TopbarView
             ref = { 'mTopbarView' }
-            style = { { width:1080, height:50 } }
+            title = {'标题'}
+            righttext = {'右按钮'}
+            style = { { width:Util.window.width, height:50 } }
             />
+
       </View>
     );
   }

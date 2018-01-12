@@ -15,6 +15,8 @@ import {
 var NativeTopbarView = requireNativeComponent('TopbarView', null);
 class TopbarView extends React.Component {
     static propTypes = {
+        title: PropTypes.string,
+        righttext: PropTypes.string,
         ...View.propTypes
     }
 
@@ -25,6 +27,8 @@ class TopbarView extends React.Component {
     render() {
         return (
             <NativeTopbarView
+                title = {this.props.title}
+                righttext = {this.props.righttext}
                 style = { this.props.style }>
             </NativeTopbarView>
         );

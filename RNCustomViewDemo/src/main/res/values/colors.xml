@@ -1,2 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+
+    <color name="transparent_background">#50000000</color>
+    <!-- 700添加 -->
+    <color name="color01">#4183ff</color>
+    <color name="color02">#333333</color>
+    <color name="color03">#ff651a</color>
+    <color name="color04">#555555</color>
+    <color name="color05">#999999</color>
+    <color name="color06">#cccccc</color>
+    <color name="color07">#e9e9e9</color>
+    <color name="color08">#f0eff5</color>
+    <color name="color09">#ffffff</color>
+    <color name="color10">#eeeeee</color>
+    <color name="color11">#ff9000</color>
+    <color name="color12">#f85858</color>
+    <color name="color13">#45c186</color>
+    <color name="color14">#f6f6f6</color>
+    <color name="color15">#2f62cd</color>
+    <color name="color16">#1b1b1b</color>
+    <color name="color17">#000000</color>
+    <color name="color18">#666666</color>
+    <color name="color19">#c3c3c3</color>
+    <color name="color20">#2873FF</color>
+    <color name="color21">#F9712C</color>
+    <color name="color20_aph">#702873FF</color>
+    <color name="color23">#FA595C </color>
+    <color name="color20_alpha_60">#992873FF</color>
+    <color name="color17_alpha_1">#01000000</color>
+    <color name="color17_alpha_2">#02000000</color>
+    <color name="color17_alpha_3">#03000000</color>
+    <color name="color17_alpha_4">#04000000</color>
+    <color name="color17_alpha_5">#05000000</color>
+    <color name="color17_alpha_20">#33000000</color>
+    <color name="color17_alpha_40">#66000000</color>
+    <color name="color17_alpha_60">#99000000</color>
+    <color name="color04_alpha_60">#99555555</color>
+    <!--60%透明度 黑色 -->
+    <color name="color16_alpha_80">#cc1b1b1b</color>
+    <color name="color09_alpha_60">#99ffffff</color>
+    <color name="color09_alpha_95">#f2ffffff</color>
+    <color name="color09_alpha_98">#f9ffffff</color>
+    <!-- color01色值的60%透明 -->
+    <color name="color01_alpha60">#994183ff</color>
+
+    <!-- 590添加 -->
+    <color name="textcolor001">#000000</color>
+    <color name="textcolor002">#333333</color>
+    <color name="textcolor004">#666666</color>
+    <color name="textcolor005">#999999</color>
+    <color name="textcolor006">#b5b5b5</color>
+    <color name="textcolor008">#ffffff</color>
+    <color name="textcolor009">#ffffff</color>
+    <color name="textcolor010">#4680d1</color>
+    <color name="textcolor011">#da4643</color>
+    <!-- 灰色 多用于辅助信息 -->
+    <color name="textcolor01">#999999</color>
+    <!-- 蓝色 多用于链接文本 -->
+    <color name="textcolor02">#4680d1</color>
+    <!-- 灰色 -->
+    <color name="textcolor03">#666666</color>
+    <!-- 灰色重黑 多用于正文 -->
+    <color name="textcolor04">#333333</color>
+
+    <color name="textcolor05">#b5b5b5</color>
+    <!-- 灰色偏白 多用于提示，如输入框提示字 -->
+    <color name="textcolor06">#000000</color>
+    <!-- 红色 多用于价格 -->
+    <color name="textcolor08">#ff800d</color>
+    <!-- 橘黄 -->
+    <color name="textcolor09">#ffffff</color>
+    <!-- 白色 -->
+    <color name="textcolor10">#cccccc</color>
+
+    <color name="textcolor11">#45c186</color>
+    <!-- 口碑满意不满意标签颜色 【降价页面列表Item TextView（地址，经销商，距离等）文字颜色】 -->
+    <color name="textcolor18">#cccccc</color>
+    <!-- 界面背景色 -->
+    <color name="textcolor21">#4a4a4a</color>
+    <!-- 历史评论右侧对话框内容颜色 -->
+    <color name="textcolor23">#cccccc</color>
+    <!-- 首页快报播报结束颜色-->
+    <color name="textcolor33">#555555</color>
+    <!-- 文字选中颜色-->
+    <color name="textcolor34">#2873ff</color>
+
+    <color name="bgcolor01">#f8f8f8</color>
+    <!-- 界面背景色 -->
+    <color name="bgcolor02">#d9d9d9</color>
+    <!-- Bar的上下边线 -->
+    <color name="bgcolor03">#e9e9e9</color>
+    <!-- 标题分类栏、索引栏、“取消”按钮等 , 原本 #eeeeee -->
+    <color name="bgcolor04">#e9e9e9</color>
+    <!-- 间隔线 ,评论列表中，引用回复左边灰条 -->
+    <color name="bgcolor05">#f6f6f6</color>
+    <!-- 发表评论按钮框 -->
+    <color name="bgcolor08">#da4643</color>
+    <!-- 购车计算器中，总价部分 -->
+    <color name="bgcolor10">#f1f1f1</color>
+    <!-- 未激活按钮 -->
+    <color name="bgcolor12">#4680d1</color>
+    <!-- 视频进度条颜色 -->
+    <color name="bgcolor20">#cecccc</color>
+    <!-- 快报播放 -->
+    <!-- 黑框的颜色 -->
+    <color name="bgcolor22">#ffffff</color>
+    <!-- 4.6添加 -->
+    <color name="bgcolor28">#e4e4e4</color>
+    <!-- 快报背景色 -->
+    <color name="bgcolor29">#fcfcfc</color>
+    <!-- 快报列表背景色 -->
+    <color name="bgcolor30">#cccccc</color>
+    <!-- 快报列表投影背景色 -->
+    <color name="bgcolor31">#f4f4f4</color>
+    <!-- 快报列表评论背景色 -->
+    <color name="bgcolor32">#f0f0f0</color>
+    <!-- 原评论标签等辅助颜色 -->
+    <color name="bgcolor33">#dddddd</color>
+    <!-- 快报最终页底部工具栏颜色 -->
+    <color name="bgcolor35">#eeeeee</color>
+    <!-- 快报结束快报button颜色 -->
+    <color name="bgcolor40">#b5b5b5</color>
+
+    <!--7.9.0使用新的颜色样式规范-->
+    <color name="c_a1">#2873FF</color>
+    <color name="c_a3">#FA595C</color>
+    <color name="c_b2">#333333</color>
+    <color name="c_b3">#666666</color>
+    <color name="c_b4">#999999</color>
+    <color name="c_b5">#c3c3c3</color>
+    <color name="c_b9">#ffffff</color>
+
+
+    <!-- V700车系综述底部车型列表按钮背景色60%透明蓝色 -->
+    <color name="color01_transparent">#994183ff</color> <!-- 用于蓝底色按钮不可点击文字 60%透明度 -->
+    <color name="color23_alpha_20">#33FA595C </color>
+    <color name="color20_alpha_20">#332873FF</color>
+    <color name="color22">#FF333333 </color>
+
+
+    <!--8.1.5汽车助手颜色 as是汽车助手前缀-->
+    <color name="as_tab_activie_title_color">#FF2873FF</color>
+    <color name="as_tab_activie_title_bg">#0D2873FF</color>
+    <color name="as_tab_unactivie_title_color">#FF666666</color>
+    <color name="as_tab_unactivie_title_bg">#FFF8F8F8</color>
+    <color name="as_question_title_color">#FF151515</color>
+
+    <!--8.4.0汽车助手点赞动画颜色-->
+    <color name="as_line_orange">#F9712C</color>
+
+    <!--8.5.0汽车助手选择车型背景颜色-->
+    <color name="as_grey_light">#0A1B1B1B</color>
+    <color name="as_bule_light">#1A2873FF</color>
+    <color name="chat_window_select_btn_unpressed">#2261D8</color>
+    <color name="chat_window_select_btn_unenable">#FF2873FF</color>
+
+    <!--8.5.0汽车助手加载失败空间背景颜色-->
+    <color name="chat_error_load_btn_normal_bg">#1A2873FF</color>
+    <color name="chat_error_load_btn_pressed_bg">#4D2873FF</color>
+    <color name="chat_error_load_btn_pressed_stroke">#2873FF</color>
+
+    <!-- 输入法 -->
+    <color name="voice_btn_normal">#E6FFFFFF</color>
+    <color name="voice_btn_pressed">#FFEEEEEE</color>
+    <color name="voice_error_bg">#FFFD4D4D</color>
+    <color name="voice_normal_bg">#FFFFFFFF</color>
+    <color name="voice_text_color">#FF333333</color>
+    <color name="voice_transform_color">#FFCCCCCC</color>
+    <color name="tab_activie_title_color">#FF2873FF</color>
+
+</resources>
