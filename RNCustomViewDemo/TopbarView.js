@@ -17,6 +17,7 @@ class TopbarView extends React.Component {
     static propTypes = {
         title: PropTypes.string,
         righttext: PropTypes.string,
+        onBack: PropTypes.func,
         ...View.propTypes
     }
 
@@ -29,9 +30,16 @@ class TopbarView extends React.Component {
             <NativeTopbarView
                 title = {this.props.title}
                 righttext = {this.props.righttext}
-                style = { this.props.style }>
+                style = { this.props.style }
+                onBack = { this._onBack }
+                >
             </NativeTopbarView>
         );
     }
+
+    _onBack(){
+             console.log('_onBack');
+        }
+
 }
 module.exports = TopbarView

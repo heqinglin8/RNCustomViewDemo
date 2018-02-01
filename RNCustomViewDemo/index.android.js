@@ -4,7 +4,9 @@ import {
   AppRegistry,
   Button,
   PixelRatio,
-  Dimensions
+  Dimensions,
+  ToastAndroid,
+  BackHandler
 } from 'react-native';
 
 import DemoView from './DemoView.js';
@@ -41,19 +43,30 @@ class DemoViewDemo extends React.Component {
         </Button>
         <Button
             title = { '动态添加控件' }
-            onPress = { () => {
-                this.refs.mDemoView.addView();
-            }}>
+            onPress = {() => {
+                             this.onBackAndroid();
+                             }}
+                     >
         </Button>
          <TopbarView
             ref = { 'mTopbarView' }
             title = {'标题'}
             righttext = {'右按钮'}
             style = { { width:Util.window.width, height:50 } }
+            onPress = {() => {
+                                 this.onBackAndroid();
+                                 }}
             />
 
       </View>
     );
   }
+
+    onBackAndroid = () => {
+        console.log('goback','关闭');
+        ToastAndroid.show('关闭app',ToastAndroid.SHORT);
+        BackHandler.exitApp();
+        return true;
+      };
 }
 AppRegistry.registerComponent('ReactNativeDemo', () => DemoViewDemo);

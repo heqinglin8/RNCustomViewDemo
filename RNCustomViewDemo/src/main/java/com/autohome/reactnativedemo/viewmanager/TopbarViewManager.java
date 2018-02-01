@@ -7,13 +7,23 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.autohome.reactnativedemo.R;
 import com.autohome.reactnativedemo.utils.ScreenUtils;
 import com.facebook.react.ReactInstanceManager;
+import com.facebook.react.bridge.Arguments;
+import com.facebook.react.bridge.ReactContext;
+import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.common.MapBuilder;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.ViewGroupManager;
 import com.facebook.react.uimanager.annotations.ReactProp;
+import com.facebook.react.uimanager.events.RCTEventEmitter;
+
+import java.util.Map;
+
+import javax.annotation.Nullable;
 
 /**
  * 作者/author：何清林（Administrator）
@@ -24,6 +34,7 @@ public class TopbarViewManager extends ViewGroupManager<RelativeLayout> {
     private ReactInstanceManager mReactInstanceManager;
     private TextView mTitleTV;
     private TextView mRightTV;
+    private ImageView mBack;
 
 
     @Override
@@ -67,9 +78,23 @@ public class TopbarViewManager extends ViewGroupManager<RelativeLayout> {
 
         RelativeLayout viewLayout = (RelativeLayout) View.inflate(reactContext,R.layout.topbar_layout,null);
 
+        mBack = (ImageView) viewLayout.findViewById(R.id.iv_back);
         mTitleTV = (TextView) viewLayout.findViewById(R.id.titleTV);
         mRightTV = (TextView) viewLayout.findViewById(R.id.rightTV);
+        initListener(reactContext);
         return viewLayout;
+    }
+
+    private void initListener(final ThemedReactContext reactContext) {
+        mBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                WritableMap event = Arguments.createMap();
+                reactContext.getJSModule(RCTEventEmitter.class)
+                        .receiveEvent(mBack.getId(), "onBackClick", event);
+
+            }
+        });
     }
 
     @ReactProp(name = "title")
@@ -86,4 +111,12 @@ public class TopbarViewManager extends ViewGroupManager<RelativeLayout> {
         mReactInstanceManager = reactInstanceManager;
     }
 
+    @Nullable
+    @Override
+    public Map<String, Object> getExportedCustomBubblingEventTypeConstants() {
+        MapBuilder.Builder<String, Object> mapBuilder = MapBuilder.builder();
+        mapBuilder.put("onBackClick", MapBuilder.of("phasedRegistrationNames",
+                MapBuilder.of("bubbled", "onBack")));
+        return mapBuilder.build();
+    }
 }
