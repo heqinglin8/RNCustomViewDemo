@@ -35,6 +35,7 @@ public class TopbarViewManager extends ViewGroupManager<RelativeLayout> {
     private TextView mTitleTV;
     private TextView mRightTV;
     private ImageView mBack;
+    private RelativeLayout mViewLayout;
 
 
     @Override
@@ -76,13 +77,13 @@ public class TopbarViewManager extends ViewGroupManager<RelativeLayout> {
 //        params2.addRule(RelativeLayout.CENTER_VERTICAL);
 //        mRightTV.setLayoutParams(params2); //使layout更新
 
-        RelativeLayout viewLayout = (RelativeLayout) View.inflate(reactContext,R.layout.topbar_layout,null);
+        mViewLayout = (RelativeLayout) View.inflate(reactContext, R.layout.topbar_layout,null);
 
-        mBack = (ImageView) viewLayout.findViewById(R.id.iv_back);
-        mTitleTV = (TextView) viewLayout.findViewById(R.id.titleTV);
-        mRightTV = (TextView) viewLayout.findViewById(R.id.rightTV);
+        mBack = (ImageView) mViewLayout.findViewById(R.id.iv_back);
+        mTitleTV = (TextView) mViewLayout.findViewById(R.id.titleTV);
+        mRightTV = (TextView) mViewLayout.findViewById(R.id.rightTV);
         initListener(reactContext);
-        return viewLayout;
+        return mViewLayout;
     }
 
     private void initListener(final ThemedReactContext reactContext) {
@@ -91,10 +92,22 @@ public class TopbarViewManager extends ViewGroupManager<RelativeLayout> {
             public void onClick(View v) {
                 WritableMap event = Arguments.createMap();
                 reactContext.getJSModule(RCTEventEmitter.class)
-                        .receiveEvent(mBack.getId(), "onBackClick", event);
+                        .receiveEvent(mViewLayout.getId(), "onBackClick", event);
 
             }
         });
+
+        mRightTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                WritableMap event = Arguments.createMap();
+                event.putString("text",mRightTV.getText().toString());
+                reactContext.getJSModule(RCTEventEmitter.class)
+                        .receiveEvent(mViewLayout.getId(), "onRightClick", event);
+
+            }
+        });
+
     }
 
     @ReactProp(name = "title")
@@ -117,6 +130,9 @@ public class TopbarViewManager extends ViewGroupManager<RelativeLayout> {
         MapBuilder.Builder<String, Object> mapBuilder = MapBuilder.builder();
         mapBuilder.put("onBackClick", MapBuilder.of("phasedRegistrationNames",
                 MapBuilder.of("bubbled", "onBack")));
+        mapBuilder.put("onRightClick", MapBuilder.of("phasedRegistrationNames",
+                MapBuilder.of("bubbled", "onRight")));
         return mapBuilder.build();
     }
+
 }

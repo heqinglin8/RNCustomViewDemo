@@ -44,8 +44,8 @@ class DemoViewDemo extends React.Component {
         <Button
             title = { '动态添加控件' }
             onPress = {() => {
-                             this.onBackAndroid();
-                             }}
+                          console.log('onPress','动态添加控件');
+                                                            }}
                      >
         </Button>
          <TopbarView
@@ -53,9 +53,13 @@ class DemoViewDemo extends React.Component {
             title = {'标题'}
             righttext = {'右按钮'}
             style = { { width:Util.window.width, height:50 } }
-            onPress = {() => {
+            onBack = {() => {
                                  this.onBackAndroid();
                                  }}
+            onRight = {(text) => {
+                                console.log('text:',text);
+                                ToastAndroid.show('text:',ToastAndroid.SHORT);
+                                  }}
             />
 
       </View>
@@ -65,7 +69,7 @@ class DemoViewDemo extends React.Component {
     onBackAndroid = () => {
         console.log('goback','关闭');
         ToastAndroid.show('关闭app',ToastAndroid.SHORT);
-        BackHandler.exitApp();
+//        BackHandler.exitApp();
         return true;
       };
 }

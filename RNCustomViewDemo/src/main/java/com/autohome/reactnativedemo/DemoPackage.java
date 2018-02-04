@@ -36,5 +36,6 @@ public class DemoPackage implements ReactPackage {
 
     public void setReactInstanceManager(ReactInstanceManager reactInstanceManager) {
         mDemoViewManager.setReactInstanceManager(reactInstanceManager);
+        mTopbarViewManager.setReactInstanceManager(reactInstanceManager);
     }
 }
