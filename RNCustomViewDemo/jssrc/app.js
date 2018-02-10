@@ -10,14 +10,21 @@ import ReactNative,{
 //ES6
 import MainScreen from './MainScreen';
 import SecondScreen from './SecondScreen';
+
+import ListViewDemo from './HotSeriesListView';
+
+import CarDetail from './CarDetail';
+
 const Navigator = StackNavigator(
   {
+    ListViewDemo: {screen: ListViewDemo},
+    CarDetail: {screen: CarDetail},
     Main: {screen: MainScreen},
     Profile: {screen: SecondScreen},
   },
   {
       navigationOptions: {
-          headerBackTitle: null,
+          headerBackTitle: "hahaha",
           headerTintColor: '#333333',
       },
   },

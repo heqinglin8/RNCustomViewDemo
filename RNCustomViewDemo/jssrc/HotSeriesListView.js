@@ -18,14 +18,17 @@ var REQUEST_URL = 'http://t.umapi.tuanche.com/basedata/hotstyle';
 var count = 20;
 var offset = 0;
 var cityId = 10;
-//跳转页面的引入
-// var CarDetail = require('./CarDetail');
-
+var navigate;
 class ListViewDemo extends Component{
+
+  static navigationOptions = {
+    title: '热门车型',
+  };
 
    //初始化
    constructor(props) {
     super(props);
+    navigate = this.props.navigation.navigate;
     var lv = new ListView.DataSource({rowHasChanged: (row1, row2) => row1 !== row2});
     this.state = {
       dataSource:lv,
@@ -85,13 +88,14 @@ class ListViewDemo extends Component{
   // },
 
    render(){
+    // const { navigate } = this.props.navigation;
      if(!this.state.loaded){
        return this.renderLoading();
      }
 
      return (
       <View style = {styles.outCotainer}>
-      <Text style={styles.title}>热门车型</Text>
+      {/* <Text style={styles.title}>热门车型</Text> */}
         <View style={styles.separator} />
       <ListView
          dataSource = {this.state.dataSource}
@@ -110,7 +114,10 @@ renderLoading(){
 
 _renderRow(rowData,sectionID,rowID) {
     return (
-      <TouchableHighlight underlayColor="rgba(34,28,32,0.5)" onPress={() => {this.pressRow.bind(rowID,rowData)}}>
+      <TouchableHighlight underlayColor="rgba(34,28,32,0.5)" onPress={() => {
+        console.log("点击一个Item：","rowID:",rowID,"name:",rowData.brandName);
+        navigate('CarDetail',{data:rowData});
+        }}>
   <View>
         <View style={styles.container} >
           <Image
@@ -202,4 +209,5 @@ var styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('ReactNativeDemo',() => ListViewDemo);
+// AppRegistry.registerComponent('ReactNativeDemo',() => ListViewDemo);
+module.exports=ListViewDemo;
