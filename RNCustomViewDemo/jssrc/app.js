@@ -8,19 +8,20 @@ import ReactNative,{
 } from 'react-native';
 
 //ES6
-import MainScreen from './MainScreen';
-import SecondScreen from './SecondScreen';
-
 import ListViewDemo from './HotSeriesListView';
+
+import RNCustomViewDemo from './RNCustomViewDemo';
 
 import CarDetail from './CarDetail';
 
+import Home from './home';
+
 const Navigator = StackNavigator(
   {
-    ListViewDemo: {screen: ListViewDemo},
+    Home: {screen: Home},
     CarDetail: {screen: CarDetail},
-    Main: {screen: MainScreen},
-    Profile: {screen: SecondScreen},
+    RNCustomViewDemo: {screen: RNCustomViewDemo},
+    CarDetail: {screen: CarDetail}
   },
   {
       navigationOptions: {

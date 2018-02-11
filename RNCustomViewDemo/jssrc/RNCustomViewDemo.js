@@ -73,4 +73,6 @@ class DemoViewDemo extends React.Component {
         return true;
       };
 }
-AppRegistry.registerComponent('ReactNativeDemo', () => DemoViewDemo);
+// AppRegistry.registerComponent('ReactNativeDemo', () => DemoViewDemo);
+
+module.exports = DemoViewDemo;
